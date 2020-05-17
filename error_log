@@ -1,0 +1,3 @@
+[24-Aug-2019 22:26:09 Asia/Dhaka] PHP Fatal error:  Interface 'Illuminate\Contracts\Routing\Middleware' not found in /home4/thepaua0/public_html/dalemo/app/Http/Middleware/CheckForMaintenanceMode.php on line 8
+[24-Aug-2019 22:26:48 Asia/Dhaka] PHP Fatal error:  Cannot declare class Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode, because the name is already in use in /home4/thepaua0/public_html/dalemo/app/Http/Middleware/CheckForMaintenanceMode.php on line 10
+[24-Aug-2019 22:28:21 Asia/Dhaka] PHP Fatal error:  Cannot declare class Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode, because the name is already in use in /home4/thepaua0/public_html/dalemo/app/Http/Middleware/CheckForMaintenanceMode.php on line 10
