@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Input;
 use \Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
+use App\User;
 
 class InventoryController extends Controller
 {
@@ -66,11 +67,13 @@ class InventoryController extends Controller
      */
     public function edit($id)
     {
+        
         $items = Item::find($id);
         $inventories = Inventory::all();
         return view('inventory.edit')
             ->with('item', $items)
             ->with('inventory', $inventories);
+            
     }
 
     /**
@@ -82,7 +85,15 @@ class InventoryController extends Controller
     public function update(Request $request, $id)
     {
         $this->validator($request->all())->validate();
+        $user = Auth::user();
+
         $items = Item::find($id);
+        $input = Input::get('in_out_qty');
+        if($user->id != 6 && $input < 0){
+            Session::flash('message', __('You do not have the permission to remove stock'));
+            Session::flash('alert-class', 'alert-danger');
+            return redirect()->back();
+        } else {
         $items->quantity = $items->quantity + Input::get('in_out_qty');
         $items->save();
 
@@ -95,6 +106,7 @@ class InventoryController extends Controller
 
         Session::flash('message', __('You have successfully updated item'));
         return Redirect::to('inventory/' . $id . '/edit');
+        }
     }
 
     /**

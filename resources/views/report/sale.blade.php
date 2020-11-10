@@ -125,7 +125,7 @@
                                             <td>{{trans('report-sale.item_name')}}</td>
                                             <td>{{trans('report-sale.quantity_purchase')}}</td>
                                             <td>{{trans('report-sale.total')}}</td>
-                                            <td>{{trans('report-sale.profit')}}</td>
+                                           
                                         </tr>
                                         @foreach(App\Sale::sale_detailed($value->id) as $SaleDetailed)
                                             <tr>
@@ -133,7 +133,7 @@
                                                 <td>{{ $SaleDetailed->item->size }}</td>
                                                 <td>{{ $SaleDetailed->quantity }}</td>
                                                 <td>{{ $SaleDetailed->selling_price * $SaleDetailed->quantity}}</td>
-                                                <td>{{ ($SaleDetailed->quantity * $SaleDetailed->selling_price) - ($SaleDetailed->quantity * $SaleDetailed->cost_price)}}</td>
+                                                
                                             </tr>
                                         @endforeach
                                     </table>

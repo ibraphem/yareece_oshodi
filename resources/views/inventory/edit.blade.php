@@ -37,8 +37,9 @@
 						<div class="col-sm-2 col-sm-offset-1">
 						{{trans('item.inventory_to_add_subtract')}} *
 						</div>
+						
 						<div class="col-sm-2" onmouseout="checkQty()">
-						{{ Form::text('in_out_qty', null, ['id' => 'formQty'], ['class' => 'form-control', 'required']) }}
+						{{ Form::text('in_out_qty', null, ['id' => 'formQty'], ['class' => 'form-control ', 'required']) }}
 						</div>
 						<div class="col-sm-1">
 						{{trans('item.comments')}}
@@ -91,6 +92,7 @@
             
             var x = document.getElementById("formQty").value;//required qty
             var y = document.getElementById("tableQty").innerHTML;//stock qty
+			
             var x = x.trim();
             var y = y.trim();
             var x = parseInt(x);
